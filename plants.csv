@@ -1,0 +1,21 @@
+vegetable_name,min_temp,max_temp,min_humid,max_humid,ph,soil_type,curah_hujan ,plant_type
+kailan,23,35,80,90,"5,5-6,5",gembur,1.000-1.500 mm/tahun,sayuran
+brokoli,18,20,60,70,6-7,"tanah liat berpasir, humus, porus",1.000-1.500 mm/tahun,sayuran
+gambas,18,24,50,60,3-5,semua jenis kecuali tanah organosol,750-1.500 mm/tahun,sayuran
+kunyit,20,30,60,80,"5-6,5",tanah gembur,1.000-4.000 mm/tahun,rempah
+jambu mete,25,40,70,80,"6,3-7,3","tanah humus, aluvial, vulkanik",1.000-2.500 mm/tahun,buah
+bintaro,45,60,30,40,8,tanah organosol,1.500 mm/tahun,buah
+mangga,24,27,85,90," 5,5-6",tanah gembur,750-2.250 mm/tahun,buah
+anggur,25,31,75,80,6-7,tanah gembur,800 mm/tahun,buah
+melon,25,30,50,70,"5,8–7,2",tanah andosol,1.500-2.500 mm/tahun,buah
+pala,25,30,70,80,"5,5-6,5",tanah liat berpasir,1500-3000 mm/tahun,rempah
+wijen,25,30,50,60,"6,0-7,5",tanah liat berpasir,500-1000 mm/tahun,rempah
+jahe,25,30,70,80,"5,5-7,0",tanah liat berpasir,2000-3000 mm/tahun,rempah
+cengkeh,25,30,70,80,"4,0-5,5",tanah liat berpasir,1500-2500 mm/tahun ,rempah
+kapulaga,25,30,60,80,"5,5-7,0",tanah liat berpasir,2000-3000 mm/tahun,rempah
+serai,25,35,70,85,"5,0-8,0",tanah liat berpasir,1500-2500 mm/tahun,rempah
+kencur,25,30,60,80,"5,5-6,5",tanah gembur,2500-3500 mm/tahun,rempah
+lengkuas,25,30,70,80,"6,0-6,8",tanah gembur,2000-3000 mm/tahun,rempah
+bunga lawang,25,30,70,80,"5,5-7,0",tanah gembur,2000-3000 mm/tahun,rempah
+lada,25,30,75,85,"5,0-7,0",tanah gembur,2000-3000 mm/tahun,rempah
+vanili,21,32,80,85,"5,5-7,0",tanah gembur,1500-2500 mm/tahun ,rempah

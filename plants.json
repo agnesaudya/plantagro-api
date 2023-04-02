@@ -1,0 +1,222 @@
+[
+    {
+        "vegetable_name": "kailan",
+        "min_temp": "23",
+        "max_temp": "35",
+        "min_humid": "80",
+        "max_humid": "90",
+        "ph": "5,5-6,5",
+        "soil_type": "gembur",
+        "curah_hujan ": "1.000-1.500 mm/tahun",
+        "plant_type": "sayuran"
+    },
+    {
+        "vegetable_name": "brokoli",
+        "min_temp": "18",
+        "max_temp": "20",
+        "min_humid": "60",
+        "max_humid": "70",
+        "ph": "6-7",
+        "soil_type": "tanah liat berpasir, humus, porus",
+        "curah_hujan ": "1.000-1.500 mm/tahun",
+        "plant_type": "sayuran"
+    },
+    {
+        "vegetable_name": "gambas",
+        "min_temp": "18",
+        "max_temp": "24",
+        "min_humid": "50",
+        "max_humid": "60",
+        "ph": "3-5",
+        "soil_type": "semua jenis kecuali tanah organosol",
+        "curah_hujan ": "750-1.500 mm/tahun",
+        "plant_type": "sayuran"
+    },
+    {
+        "vegetable_name": "kunyit",
+        "min_temp": "20",
+        "max_temp": "30",
+        "min_humid": "60",
+        "max_humid": "80",
+        "ph": "5-6,5",
+        "soil_type": "tanah gembur",
+        "curah_hujan ": "1.000-4.000 mm/tahun",
+        "plant_type": "rempah"
+    },
+    {
+        "vegetable_name": "jambu mete",
+        "min_temp": "25",
+        "max_temp": "40",
+        "min_humid": "70",
+        "max_humid": "80",
+        "ph": "6,3-7,3",
+        "soil_type": "tanah humus, aluvial, vulkanik",
+        "curah_hujan ": "1.000-2.500 mm/tahun",
+        "plant_type": "buah"
+    },
+    {
+        "vegetable_name": "bintaro",
+        "min_temp": "45",
+        "max_temp": "60",
+        "min_humid": "30",
+        "max_humid": "40",
+        "ph": "8",
+        "soil_type": "tanah organosol",
+        "curah_hujan ": "1.500 mm/tahun",
+        "plant_type": "buah"
+    },
+    {
+        "vegetable_name": "mangga",
+        "min_temp": "24",
+        "max_temp": "27",
+        "min_humid": "85",
+        "max_humid": "90",
+        "ph": " 5,5-6",
+        "soil_type": "tanah gembur",
+        "curah_hujan ": "750-2.250 mm/tahun",
+        "plant_type": "buah"
+    },
+    {
+        "vegetable_name": "anggur",
+        "min_temp": "25",
+        "max_temp": "31",
+        "min_humid": "75",
+        "max_humid": "80",
+        "ph": "6-7",
+        "soil_type": "tanah gembur",
+        "curah_hujan ": "800 mm/tahun",
+        "plant_type": "buah"
+    },
+    {
+        "vegetable_name": "melon",
+        "min_temp": "25",
+        "max_temp": "30",
+        "min_humid": "50",
+        "max_humid": "70",
+        "ph": "5,8\u20137,2",
+        "soil_type": "tanah andosol",
+        "curah_hujan ": "1.500-2.500 mm/tahun",
+        "plant_type": "buah"
+    },
+    {
+        "vegetable_name": "pala",
+        "min_temp": "25",
+        "max_temp": "30",
+        "min_humid": "70",
+        "max_humid": "80",
+        "ph": "5,5-6,5",
+        "soil_type": "tanah liat berpasir",
+        "curah_hujan ": "1500-3000 mm/tahun",
+        "plant_type": "rempah"
+    },
+    {
+        "vegetable_name": "wijen",
+        "min_temp": "25",
+        "max_temp": "30",
+        "min_humid": "50",
+        "max_humid": "60",
+        "ph": "6,0-7,5",
+        "soil_type": "tanah liat berpasir",
+        "curah_hujan ": "500-1000 mm/tahun",
+        "plant_type": "rempah"
+    },
+    {
+        "vegetable_name": "jahe",
+        "min_temp": "25",
+        "max_temp": "30",
+        "min_humid": "70",
+        "max_humid": "80",
+        "ph": "5,5-7,0",
+        "soil_type": "tanah liat berpasir",
+        "curah_hujan ": "2000-3000 mm/tahun",
+        "plant_type": "rempah"
+    },
+    {
+        "vegetable_name": "cengkeh",
+        "min_temp": "25",
+        "max_temp": "30",
+        "min_humid": "70",
+        "max_humid": "80",
+        "ph": "4,0-5,5",
+        "soil_type": "tanah liat berpasir",
+        "curah_hujan ": "1500-2500 mm/tahun ",
+        "plant_type": "rempah"
+    },
+    {
+        "vegetable_name": "kapulaga",
+        "min_temp": "25",
+        "max_temp": "30",
+        "min_humid": "60",
+        "max_humid": "80",
+        "ph": "5,5-7,0",
+        "soil_type": "tanah liat berpasir",
+        "curah_hujan ": "2000-3000 mm/tahun",
+        "plant_type": "rempah"
+    },
+    {
+        "vegetable_name": "serai",
+        "min_temp": "25",
+        "max_temp": "35",
+        "min_humid": "70",
+        "max_humid": "85",
+        "ph": "5,0-8,0",
+        "soil_type": "tanah liat berpasir",
+        "curah_hujan ": "1500-2500 mm/tahun",
+        "plant_type": "rempah"
+    },
+    {
+        "vegetable_name": "kencur",
+        "min_temp": "25",
+        "max_temp": "30",
+        "min_humid": "60",
+        "max_humid": "80",
+        "ph": "5,5-6,5",
+        "soil_type": "tanah gembur",
+        "curah_hujan ": "2500-3500 mm/tahun",
+        "plant_type": "rempah"
+    },
+    {
+        "vegetable_name": "lengkuas",
+        "min_temp": "25",
+        "max_temp": "30",
+        "min_humid": "70",
+        "max_humid": "80",
+        "ph": "6,0-6,8",
+        "soil_type": "tanah gembur",
+        "curah_hujan ": "2000-3000 mm/tahun",
+        "plant_type": "rempah"
+    },
+    {
+        "vegetable_name": "bunga lawang",
+        "min_temp": "25",
+        "max_temp": "30",
+        "min_humid": "70",
+        "max_humid": "80",
+        "ph": "5,5-7,0",
+        "soil_type": "tanah gembur",
+        "curah_hujan ": "2000-3000 mm/tahun",
+        "plant_type": "rempah"
+    },
+    {
+        "vegetable_name": "lada",
+        "min_temp": "25",
+        "max_temp": "30",
+        "min_humid": "75",
+        "max_humid": "85",
+        "ph": "5,0-7,0",
+        "soil_type": "tanah gembur",
+        "curah_hujan ": "2000-3000 mm/tahun",
+        "plant_type": "rempah"
+    },
+    {
+        "vegetable_name": "vanili",
+        "min_temp": "21",
+        "max_temp": "32",
+        "min_humid": "80",
+        "max_humid": "85",
+        "ph": "5,5-7,0",
+        "soil_type": "tanah gembur",
+        "curah_hujan ": "1500-2500 mm/tahun ",
+        "plant_type": "rempah"
+    }
+]

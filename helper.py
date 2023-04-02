@@ -3,6 +3,7 @@ import xmltodict
 import classes
 import json
 import utils
+import province
 
 
 def fetchBMKGDataByMuncipality(province_name:str, municipality:str):
@@ -12,6 +13,8 @@ def fetchBMKGDataByMuncipality(province_name:str, municipality:str):
         url_query = (split_res[0]+split_res[1])
     else:
         url_query = (split_res[0])
+
+    
     
     url = f'https://data.bmkg.go.id/DataMKG/MEWS/DigitalForecast/DigitalForecast-{url_query}.xml'
     response = requests.get(url)
@@ -30,7 +33,6 @@ def fetchBMKGDataByMuncipality(province_name:str, municipality:str):
                         counter +=1 
                         total+=int(h['value']['#text'])
                     mean = total/counter
-
                     fetchRes.mean_humid=mean  
                 elif(par['@id']=="humax"):
                     fetchRes.max_humid = par['timerange'][0]['value']['#text']
@@ -72,44 +74,45 @@ def fetchAllBMKGDataByProvince(province_name:str):
         fetchRes = classes.State()
         fetchRes.province_name = province_name
         fetchRes.municipality=dat['@description']
-
-        for par in dat['parameter']:
-            if(par['@id']=="hu"):
-                total = 0
-                counter = 0 
-                mean = 0
-                for h in par['timerange']:
-                    counter +=1 
-                    total+=int(h['value']['#text'])
-                mean = total/counter
-                fetchRes.mean_humid=mean  
-            elif(par['@id']=="humax"):
-                fetchRes.max_humid = par['timerange'][0]['value']['#text']
-            elif(par['@id']=="tmax"):
-                fetchRes.max_temp = par['timerange'][0]['value'][0]['#text']
-            elif(par['@id']=="humin"):
-                fetchRes.min_humid = par['timerange'][0]['value']['#text']
-            elif(par['@id']=="tmin"):
-                fetchRes.min_temp = par['timerange'][0]['value'][0]['#text']
-            elif(par['@id']=="t"):
-                total = 0
-                counter = 0 
-                mean = 0
-                for h in par['timerange']:
-                    counter +=1 
-                    total+=int(h['value'][0]['#text'])
-                mean = total/counter
-                fetchRes.mean_temp=mean
-                break    
-        
-        arr.append(fetchRes)
+        if(dat['@tags']=="Pelabuhan" or dat['@type']=="sea"):
+            continue
+        else:
+            for par in dat['parameter']:
+                if(par['@id']=="hu"):
+                    total = 0
+                    counter = 0 
+                    mean = 0
+                    for h in par['timerange']:
+                        counter +=1 
+                        total+=int(h['value']['#text'])
+                    mean = total/counter
+                    fetchRes.mean_humid=mean  
+                elif(par['@id']=="humax"):
+                    fetchRes.max_humid = par['timerange'][0]['value']['#text']
+                elif(par['@id']=="tmax"):
+                    fetchRes.max_temp = par['timerange'][0]['value'][0]['#text']
+                elif(par['@id']=="humin"):
+                    fetchRes.min_humid = par['timerange'][0]['value']['#text']
+                elif(par['@id']=="tmin"):
+                    fetchRes.min_temp = par['timerange'][0]['value'][0]['#text']
+                elif(par['@id']=="t"):
+                    total = 0
+                    counter = 0 
+                    mean = 0
+                    for h in par['timerange']:
+                        counter +=1 
+                        total+=int(h['value'][0]['#text'])
+                    mean = total/counter
+                    fetchRes.mean_temp=mean
+                    break    
+            
+            arr.append(fetchRes)
 
  
     return json.dumps([obj.__dict__ for obj in arr])
 
-def getPlantsByType(province_name:str, municipality:str, type:str):
+def getPlantsByType(type:str):
     getAllPlants()
-    data = fetchBMKGDataByMuncipality(province_name=province_name, municipality=municipality)
     arr = []
     f = open('plants.json')
     plants = json.loads(f.read())
@@ -120,6 +123,32 @@ def getPlantsByType(province_name:str, municipality:str, type:str):
 
  
     return arr
+
+def recommendPlace(plant_name:str):
+    plant = {}
+    for i in getAllPlants():
+        if(i['plant_name']==plant_name):
+            plant=i
+    list_recommended = []
+    for p in province.list_kota:
+        listMuncipal = json.loads(fetchAllBMKGDataByProvince(p))
+        for m in listMuncipal:
+            flag = True
+            if(int(m['mean_temp'])<int(plant['min_temp'])):
+                flag=False
+            elif(int(m['mean_temp'])>int(plant['max_temp'])):
+                flag=False
+            elif(int(m['mean_humid'])<int(plant['min_humid'])):
+                flag=False
+            elif(int(m['mean_humid'])>int(plant['max_humid'])):
+                flag=False
+            
+            if(flag):
+                list_recommended.append(m)
+    return list_recommended
+    
+    
+
 
 def getAllPlants():
     csvFilePath = r'plants.csv'

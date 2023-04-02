@@ -142,8 +142,8 @@ def analyzePlantTask(province_name:str, municipality:str, email:str, type:str):
 
 
 def sendEmail(email:str, content:str, subject:str):
-    email_address = "brilliantaurisya@gmail.com"
-    email_password = "izeeeiddribvpivw"
+    email_address = "email"
+    email_password = "password"
     msg = EmailMessage()
     msg['Subject'] = subject
     msg['From'] = email_address

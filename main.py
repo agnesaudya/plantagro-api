@@ -122,7 +122,7 @@ def analyzePlantTask(province_name:str, municipality:str, email:str, type:str):
     res = helper.analyzePlants(province_name, municipality, type)
 
     subject = f"Hasil Analisis Tanaman-tanaman yang memang cocok untuk daerah {municipality}"
-    content = f"Halo kak, berikut adalah hasil analisis {type} apa saja yang ada di data kami:\n"
+    content = f"Halo kak, berikut adalah hasil analisis apa saja yang ada di data kami:\n"
     listPlant = ""
 
     counter = 0

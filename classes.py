@@ -16,6 +16,10 @@ class State(BaseModel):
     max_temp: Union[str, None] = None
     min_humid: Union[str, None] = None
     max_humid: Union[str, None] = None
+    mean_humid: Union[str, None] = None
+    mean_temp: Union[str, None] = None
+
+
 
 
     

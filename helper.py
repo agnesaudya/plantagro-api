@@ -4,6 +4,7 @@ import classes
 import json
 import utils
 
+
 def fetchBMKGDataByMuncipality(province_name:str, municipality:str):
     split_res = province_name.split(' ')
     url_query = ""
@@ -21,15 +22,34 @@ def fetchBMKGDataByMuncipality(province_name:str, municipality:str):
         if(dat['@description']==municipality):
             fetchRes.municipality=dat['@description']
             for par in dat['parameter']:
-                if(par['@id']=="humax"):
+                if(par['@id']=="hu"):
+                    total = 0
+                    counter = 0 
+                    mean = 0
+                    for h in par['timerange']:
+                        counter +=1 
+                        total+=int(h['value']['#text'])
+                    mean = total/counter
+
+                    fetchRes.mean_humid=mean  
+                elif(par['@id']=="humax"):
                     fetchRes.max_humid = par['timerange'][0]['value']['#text']
-                    print(par['timerange'][0]['value']['#text'])
                 elif(par['@id']=="tmax"):
                     fetchRes.max_temp = par['timerange'][0]['value'][0]['#text']
                 elif(par['@id']=="humin"):
                     fetchRes.min_humid = par['timerange'][0]['value']['#text']
                 elif(par['@id']=="tmin"):
                     fetchRes.min_temp = par['timerange'][0]['value'][0]['#text']
+                elif(par['@id']=="t"):
+                    total = 0
+                    counter = 0 
+                    mean = 0
+                    for h in par['timerange']:
+                        counter +=1 
+                        total+=int(h['value'][0]['#text'])
+                    mean = total/counter
+
+                    fetchRes.mean_temp=mean
                     break
             break
     return json.dumps(fetchRes.__dict__)
@@ -54,16 +74,33 @@ def fetchAllBMKGDataByProvince(province_name:str):
         fetchRes.municipality=dat['@description']
 
         for par in dat['parameter']:
-            if(par['@id']=="humax"):
+            if(par['@id']=="hu"):
+                total = 0
+                counter = 0 
+                mean = 0
+                for h in par['timerange']:
+                    counter +=1 
+                    total+=int(h['value']['#text'])
+                mean = total/counter
+                fetchRes.mean_humid=mean  
+            elif(par['@id']=="humax"):
                 fetchRes.max_humid = par['timerange'][0]['value']['#text']
-                print(par['timerange'][0]['value']['#text'])
             elif(par['@id']=="tmax"):
-                    fetchRes.max_temp = par['timerange'][0]['value'][0]['#text']
+                fetchRes.max_temp = par['timerange'][0]['value'][0]['#text']
             elif(par['@id']=="humin"):
                 fetchRes.min_humid = par['timerange'][0]['value']['#text']
             elif(par['@id']=="tmin"):
                 fetchRes.min_temp = par['timerange'][0]['value'][0]['#text']
-                break
+            elif(par['@id']=="t"):
+                total = 0
+                counter = 0 
+                mean = 0
+                for h in par['timerange']:
+                    counter +=1 
+                    total+=int(h['value'][0]['#text'])
+                mean = total/counter
+                fetchRes.mean_temp=mean
+                break    
         
         arr.append(fetchRes)
 
@@ -107,13 +144,13 @@ def analyzePlants(province_name:str, municipality:str, type:str):
     for p in plants:
         flag = True
 
-        if(int(municipality_data['min_temp'])<p['min_temp']):
+        if(int(municipality_data['mean_temp'])<int(p['min_temp'])):
             flag=False
-        elif(int(municipality_data['max_temp'])>p['max_temp']):
+        elif(int(municipality_data['mean_temp'])>int(p['max_temp'])):
             flag=False
-        elif(int(municipality_data['min_humid'])<p['min_humid']):
+        elif(int(municipality_data['mean_humid'])<int(p['min_humid'])):
             flag=False
-        elif(int(municipality_data['max_humid'])>p['max_humid']):
+        elif(int(municipality_data['mean_humid'])>int(p['max_humid'])):
             flag=False
         
         if(flag):
